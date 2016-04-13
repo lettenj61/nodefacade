@@ -119,7 +119,7 @@ trait Util extends js.Object {
   def inherits[A <: js.Any, B <: js.Any](
       constructor: js.ConstructorTag[A], superConstructor: js.ConstructorTag[B]): Unit = js.native
   def inspect(`object`: js.Any, options: js.UndefOr[Object] = js.undefined): String = js.native
-  @deprecated("uti.isjs.Array() is deprecated in Node.js.", "0.1.0")
+  @deprecated("uti.isArray() is deprecated in Node.js.", "0.1.0")
   def isArray(`object`: js.Any): Boolean = js.native
   @deprecated("uti.isBoolean() is deprecated in Node.js.", "0.1.0")
   def isBoolean(`object`: js.Any): Boolean = js.native
@@ -156,18 +156,5 @@ trait Util extends js.Object {
   //          writableStream: WritableStream, callback: js.UndefOr[js.Function] = js.undefined)
   @deprecated("uti.puts() is deprecated in Node.js, use console.log() instead.", "0.1.0")
   def puts(msg: js.Any*): Boolean = js.native
-}
-
-@js.native
-trait EventEmitter extends js.Object {
-  def addListener(eventName: String, listener: js.Function): EventEmitter = js.native
-  def emit(eventName: String, args: js.Any*): Boolean = js.native
-  def getMaxListeners(): Int = js.native
-  def listenerCount(eventName: String): Int = js.native
-  def listeners(eventName: String): js.Array[js.Function] = js.native
-  def on(eventName: String, listener: js.Function): EventEmitter = js.native
-  def once(eventName: String, listener: js.Function): EventEmitter = js.native
-  def removeListener(eventName: String, listener: js.Function): EventEmitter = js.native
-  def setMaxListeners(n: Int): EventEmitter = js.native
 }
 

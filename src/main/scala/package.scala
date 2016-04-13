@@ -11,6 +11,7 @@ package object nodejs {
   val module: raw.Module = global.module.asInstanceOf[raw.Module]
   val console: raw.Console = global.console.asInstanceOf[raw.Console]
   lazy val process: raw.Process = global.process.asInstanceOf[raw.Process]
+  val Buffer: raw.Buffer.type = raw.Buffer
 
   /* Objects accesible through `require` function. */
   lazy val http: raw.Http = Require("http").asInstanceOf[raw.Http]
