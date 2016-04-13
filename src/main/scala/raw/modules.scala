@@ -21,7 +21,9 @@ trait Console extends js.Object {
 
 @js.native
 trait Http extends js.Object {
-  import raw.http._
+
+  type IncomingMessage = raw.http.IncomingMessage
+  type Server = raw.http.Server
 
   val METHODS: js.Array[String] = js.native
   // TODO: impelement as Int-keyed dictionary-like object, or a helper class.
