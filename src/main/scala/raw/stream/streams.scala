@@ -16,6 +16,12 @@ trait Readable extends EventEmitter {
   def pause(): Readable = js.native
   def pipe(destination: Writable, options: js.Dynamic = literal(end = true)): Writable = js.native
   def read(size: js.UndefOr[Int] = ???): String | Buffer = js.native
+  def resume(): Readable = js.native
+  def setEncoding(encoding: String): Readable = js.native
+  def unpipe(destination: js.UndefOr[Writable] = js.undefined): Unit = js.native
+  def unshift(chunk: Buffer | String): Unit = js.native
+  // TODO: should implement typed version of an `old` stream?
+  def wrap(stream: js.Dynamic): Readable = js.native
 }
 
 @js.native
