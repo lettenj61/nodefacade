@@ -11,7 +11,7 @@ import js.|
 import nodejs.raw.{ Buffer, EventEmitter }
 
 @js.native
-trait Readable extends EventEmitter {
+class Readable extends EventEmitter {
   def isPaused(): Boolean = js.native
   def pause(): Readable = js.native
   def pipe(destination: Writable, options: js.Dynamic = literal(end = true)): Writable = js.native
@@ -25,4 +25,12 @@ trait Readable extends EventEmitter {
 }
 
 @js.native
-trait Writable extends EventEmitter
+trait Writable extends EventEmitter {
+  def cork(): Unit = js.native
+  def end(chunk: String | Buffer = ???, encoding: js.UndefOr[String] = js.undefined,
+          callback: js.Function = ???): Unit = js.native
+  def setDefaultEncoding(encoding: String): Unit = js.native
+  def uncork(): Unit = js.native
+  def write(chunk: String | Buffer, encoding: js.UndefOr[String] = js.undefined,
+            callback: js.Function = ???): Boolean = js.native
+}
