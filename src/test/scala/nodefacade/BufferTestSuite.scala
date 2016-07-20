@@ -1,15 +1,15 @@
-package com.github.lettenj61.nodefacade
+package nodefacade
 package test
 
 import scala.scalajs.js
 import js.Dynamic.literal
 
 import utest._
-import nodejs.raw.Buffer
+import nodefacade.raw.Buffer
 
 object BufferTestSuite extends TestSuite {
 
-  val companion = nodejs.Buffer
+  val companion = nodefacade.nodejs.Buffer
   def randomChars(n: Int = 8): String = util.Random.alphanumeric.take(n).mkString
 
   val tests = this {
@@ -18,6 +18,7 @@ object BufferTestSuite extends TestSuite {
       val b2 = Buffer(js.Array(5, 5, 5, 5))
       val b3 = Buffer(b1)
       val b4 = Buffer("come join me testing")
+      println(b1)
       assert((b1 compare b2) == -1)
     }
     "bracket apply / update" - {

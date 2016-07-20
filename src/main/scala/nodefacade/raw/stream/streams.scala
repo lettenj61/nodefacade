@@ -1,5 +1,4 @@
-package com.github.lettenj61.nodefacade
-package nodejs
+package nodefacade
 package raw
 package stream
 
@@ -8,7 +7,7 @@ import js.annotation.{ JSExport, JSName, ScalaJSDefined }
 import js.Dynamic.{ global, newInstance => jsnew, literal }
 import js.|
 
-import nodejs.raw.{ Buffer, EventEmitter }
+import nodefacade.raw.{ Buffer, EventEmitter }
 
 @js.native
 class Readable extends EventEmitter {

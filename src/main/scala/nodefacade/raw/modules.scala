@@ -1,5 +1,4 @@
-package com.github.lettenj61.nodefacade
-package nodejs
+package nodefacade
 package raw
 
 import scala.scalajs.js
@@ -44,6 +43,15 @@ trait Module extends js.Object {
   def require(id: String): Object = js.native
 }
 
+@ScalaJSDefined
+trait PathEntry extends js.Object {
+  val root: String
+  val dir: String
+  val base: String
+  val ext: String
+  val name: String
+}
+
 @js.native
 trait Path extends js.Object {
   def basename(p: String, ext: String = ???): String = js.native
@@ -54,7 +62,7 @@ trait Path extends js.Object {
   def isAbsolute(path: String): Boolean = js.native
   def join(paths: String*): String = js.native
   def normalize(p: String): String = js.native
-  def parse(pathString: String): js.Dynamic = js.native
+  def parse(pathString: String): PathEntry = js.native
   val posix: Path = js.native
   def relative(from: String, to: String): String = js.native
   def resolve(paths: String*): String = js.native
@@ -73,7 +81,7 @@ trait Process extends EventEmitter {
   val connected: Boolean = js.native
   def cwd(): String = js.native
   def disconnect(): Unit = js.native
-  def env: js.Dynamic = js.native
+  def env: js.Dictionary[String] = js.native
   val execArgv: js.Array[String] = js.native
   val execPath: String = js.native
   def exit(code: Int = 0): Unit = js.native

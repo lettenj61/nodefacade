@@ -4,6 +4,8 @@
 local.sbt
 nodefacade-fastopt1.js
 
+_unmanaged/
+
 # sbt specific
 .cache
 .history

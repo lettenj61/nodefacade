@@ -1,5 +1,4 @@
-package com.github.lettenj61.nodefacade
-package nodejs
+package nodefacade
 package raw
 package http
 
@@ -7,7 +6,7 @@ import scala.scalajs.js
 import js.annotation.{ JSExport, JSName, ScalaJSDefined }
 import js.Dynamic.{ global, newInstance => jsnew, literal }
 
-import raw.EventEmitter
+import nodefacade.raw.EventEmitter
 
 @js.native
 trait IncomingMessage extends EventEmitter {

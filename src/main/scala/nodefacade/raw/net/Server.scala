@@ -1,5 +1,4 @@
-package com.github.lettenj61.nodefacade
-package nodejs
+package nodefacade
 package raw
 package net
 
@@ -7,7 +6,7 @@ import scala.scalajs.js
 import js.annotation.{ JSExport, JSName, ScalaJSDefined }
 import js.Dynamic.{ global, newInstance => jsnew, literal }
 
-import nodejs.raw.EventEmitter
+import nodefacade.raw.EventEmitter
 
 @js.native
 trait Server extends EventEmitter {
@@ -15,7 +14,6 @@ trait Server extends EventEmitter {
 
   def address(): Address = js.native
   def close(callback: js.Function = ???): Server = js.native
-  @deprecated("server.connections is deprecated in Node.js, use server.getConnections() instead.", "0.1.0")
   val connections: Int = js.native
   def getConnections(callback: js.Function2[js.Error, Int, _]): Int = js.native
   @JSName("listen")

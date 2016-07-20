@@ -1,5 +1,4 @@
-package com.github.lettenj61.nodefacade
-package nodejs
+package nodefacade
 package raw
 
 import scala.scalajs.js

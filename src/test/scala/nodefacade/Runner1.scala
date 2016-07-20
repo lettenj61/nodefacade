@@ -1,14 +1,13 @@
-package com.github.lettenj61.nodefacade
+package nodefacade.test
 
 import scala.scalajs.js
 import js.Dynamic.{ literal => Let }
 
-import nodejs.http
-import nodejs.Buffer
+import nodefacade.nodejs._
 
 object Runner1 extends js.JSApp {
   def main(): Unit = {
-    import nodejs.http.IncomingMessage
+    import http.IncomingMessage
 
     val buffer = new Buffer.FromString("rejoice!!")
 
